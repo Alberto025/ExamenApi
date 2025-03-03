@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Items {
 
     /**
-     * Campo identificador único en MongoDB.
+     * Campo identificador único en MongoDB
      */
     @Id
     private String _id;
