@@ -5,9 +5,8 @@ Todos los items
 Borrar un id
 ![image](https://github.com/user-attachments/assets/47c03bcf-2fff-4ced-81c1-8f300ad68ad8)
 
-Escoger un id
+Categoria
 ![image](https://github.com/user-attachments/assets/5830919c-aa59-460f-9136-1ff0259c0b5c)
 
-
-Categoria
+Esocger un id
 ![image](https://github.com/user-attachments/assets/a2064824-cf30-444d-bfe9-efd2f6c58a3d)
