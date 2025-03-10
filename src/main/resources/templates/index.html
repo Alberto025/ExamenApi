@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Items</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<h1 th:text="${titulo}"></h1>
+
+<!-- Botón para crear un nuevo item -->
+<a href="/web/new" class="create-button">Crear Nuevo Item</a>
+
+<!-- Contenedor de items en formato grid -->
+<div class="items-container">
+    <div class="item-card" th:each="items:${items}">
+        <a th:href="@{'/web/'+${items.id}}">
+            <h2 th:text="${items.title}"></h2>
+            <p><strong>Título:</strong> <span th:text="${items.title}"></span></p>
+            <p><strong>Precio:</strong> <span th:text="${items.price}"></span>€</p>
+            <p><strong>Descripción:</strong> <span th:text="${items.description}"></span></p>
+            <p><strong>Categoría:</strong> <span th:text="${items.category}"></span></p>
+            <p><strong>Puntuación:</strong> <span th:text="${items.rate}"></span></p>
+            <p><strong>Total (count):</strong> <span th:text="${items.count}"></span></p>
+            <p><strong>Imágen:</strong></p><img th:src="${items.image}" alt="Error en la imágen del item" style="max-width: 100px; height: auto;">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

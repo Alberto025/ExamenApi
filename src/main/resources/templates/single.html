@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${items.title}">Detalle del item</title>
+    <link rel="stylesheet" href="/single.css">
+</head>
+<body>
+
+<h1 th:text="${items.title}"></h1>
+
+<div class="items-details">
+    <p><strong>Título:</strong> <span th:text="${items.title}"></span></p>
+    <p><strong>Precio:</strong> <span th:text="${items.price}"></span>€</p>
+    <p><strong>Descripción:</strong> <span th:text="${items.description}"></span></p>
+    <p><strong>Categoría:</strong><span th:text="${items.category}"></span></p>
+    <p><strong>Puntuación:</strong> <span th:text="${items.rate}"></span></p>
+    <p><strong>Total (count):</strong> <span th:text="${items.count}"></span></p>
+    <p><strong>Imágen:</strong> <img th:src="${items.image}" alt="Error en la imágen del item" style="max-width: 100px; height: auto;"></p>
+
+</div>
+
+<!-- Botón para redirigir al formulario de edición -->
+<a th:href="@{'/web/' + ${items.id} + '/edit'}" class="edit-button">Editar</a>
+
+<!-- Botón para borrar un item -->
+<form th:action="@{/web/{id}/delete(id=${items.id})}" method="post">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <button type="submit" class="delete-button">Borrar</button>
+</form>
+
+<!-- Botón para volver al listado de items -->
+<a href="/web/" class="back-link">Volver al listado</a>
+
+</body>
+</html>
